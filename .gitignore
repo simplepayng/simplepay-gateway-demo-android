@@ -1,0 +1,15 @@
+# Android
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+# IDEs
+.project
+.pydevproject
+.idea
+.settings

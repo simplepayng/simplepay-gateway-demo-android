@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="ng.simplepay.gateway.checkout.demo.democheckout.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay With SimplePay"
+        android:id="@+id/payBtn"
+        android:background="#622C8C"
+        android:textColor="#FFF"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:elegantTextHeight="false"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay With SimplePay With User Data"
+        android:id="@+id/payBtnUserData"
+        android:background="#622C8C"
+        android:textColor="#FFF"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:elegantTextHeight="false"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/payBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay With SimplePay No API Key"
+        android:id="@+id/payBtnFail"
+        android:background="#622C8C"
+        android:textColor="#FFF"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:elegantTextHeight="false"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/payBtnUserData"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay With SimplePay Custom Image"
+        android:id="@+id/payBtnCustomImage"
+        android:background="#622C8C"
+        android:textColor="#FFF"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:elegantTextHeight="false"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/payBtnFail"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultTxt"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000" />
+
+</RelativeLayout>
