@@ -20,13 +20,29 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtn = (Button) findViewById(R.id.payBtn);
         payBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
                 myIntent.putExtra("amount_currency", "NGN");
                 myIntent.putExtra("email", "a@a.com");
                 myIntent.putExtra("phone", "+351911111111");
+                myIntent.putExtra("payment_type", "checkout");
+                MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
+            }
+        });
+
+        final Button payBtnRemember = (Button) findViewById(R.id.payBtnRemember);
+        payBtnRemember.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                myIntent.putExtra("api_key", "test_pu_demo");
+                myIntent.putExtra("description", "Order #123-45678 and a very long description");
+                myIntent.putExtra("amount", 1000);
+                myIntent.putExtra("amount_currency", "NGN");
+                myIntent.putExtra("email", "a@a.com");
+                myIntent.putExtra("phone", "+351911111111");
+                myIntent.putExtra("payment_type", "remember");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -34,11 +50,12 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnUserData = (Button) findViewById(R.id.payBtnUserData);
         payBtnUserData.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
                 myIntent.putExtra("amount_currency", "NGN");
+                myIntent.putExtra("payment_type", "checkout");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -46,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnFail = (Button) findViewById(R.id.payBtnFail);
         payBtnFail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -54,13 +71,14 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnCustomImage = (Button) findViewById(R.id.payBtnCustomImage);
         payBtnCustomImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
                 myIntent.putExtra("amount_currency", "NGN");
                 myIntent.putExtra("email", "a@a.com");
                 myIntent.putExtra("phone", "+351911111111");
+                myIntent.putExtra("payment_type", "checkout");
                 myIntent.putExtra("logo", "https://secure.gravatar.com/avatar/c161f5d7024dc7a5c662033db3c397c3?s=140&d=identicon");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }

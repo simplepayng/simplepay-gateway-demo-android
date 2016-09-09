@@ -4,12 +4,13 @@ import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
 
-import ng.simplepay.gateway.checkout.Checkout;
+import ng.simplepay.gateway.Gateway;
 
 public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     private MainActivity mainActivity;
     private Button payBtn;
+    private Button payBtnRemember;
     private Button payBtnUserData;
     private Button payBtnFail;
     private Button payBtnCustomImage;
@@ -27,7 +28,18 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
                 payBtn.performClick();
             }
         });
-        Checkout checkoutActivity = (Checkout) checkoutActivityMonitor.waitForActivity();
+        Gateway checkoutActivity = (Gateway) checkoutActivityMonitor.waitForActivity();
+        assertNotNull("Target Activity is not launched", checkoutActivity);
+        checkoutActivity.finish();
+
+        mainActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                payBtnRemember.performClick();
+            }
+        });
+
+        checkoutActivity = (Gateway) checkoutActivityMonitor.waitForActivity();
         assertNotNull("Target Activity is not launched", checkoutActivity);
         checkoutActivity.finish();
 
@@ -37,7 +49,8 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
                 payBtnUserData.performClick();
             }
         });
-        checkoutActivity = (Checkout) checkoutActivityMonitor.waitForActivity();
+
+        checkoutActivity = (Gateway) checkoutActivityMonitor.waitForActivity();
         assertNotNull("Target Activity is not launched", checkoutActivity);
         checkoutActivity.finish();
 
@@ -47,7 +60,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
                 payBtnFail.performClick();
             }
         });
-        checkoutActivity = (Checkout) checkoutActivityMonitor.waitForActivity();
+        checkoutActivity = (Gateway) checkoutActivityMonitor.waitForActivity();
         assertNotNull("Target Activity is not launched", checkoutActivity);
         checkoutActivity.finish();
 
@@ -57,7 +70,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
                 payBtnCustomImage.performClick();
             }
         });
-        checkoutActivity = (Checkout) checkoutActivityMonitor.waitForActivity();
+        checkoutActivity = (Gateway) checkoutActivityMonitor.waitForActivity();
         assertNotNull("Target Activity is not launched", checkoutActivity);
         checkoutActivity.finish();
     }
@@ -66,10 +79,11 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
     protected void setUp() throws Exception {
         super.setUp();
 
-        checkoutActivityMonitor = getInstrumentation().addMonitor(Checkout.class.getName(), null, false);
+        checkoutActivityMonitor = getInstrumentation().addMonitor(Gateway.class.getName(), null, false);
         mainActivity = getActivity();
 
         payBtn = (Button) mainActivity.findViewById(R.id.payBtn);
+        payBtnRemember = (Button) mainActivity.findViewById(R.id.payBtnRemember);
         payBtnUserData = (Button) mainActivity.findViewById(R.id.payBtnUserData);
         payBtnFail = (Button) mainActivity.findViewById(R.id.payBtnFail);
         payBtnCustomImage = (Button) mainActivity.findViewById(R.id.payBtnCustomImage);
