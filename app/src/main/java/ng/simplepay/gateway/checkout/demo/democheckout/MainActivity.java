@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("email", "a@a.com");
                 myIntent.putExtra("phone", "+351911111111");
                 myIntent.putExtra("payment_type", "checkout");
+                myIntent.putExtra("address", "31 Kade St, Abuja, Nigeria");
+                myIntent.putExtra("postal_code", "110001");
+                myIntent.putExtra("state", "Abuja");
+                myIntent.putExtra("country", "NG");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -43,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("email", "a@a.com");
                 myIntent.putExtra("phone", "+351911111111");
                 myIntent.putExtra("payment_type", "remember");
+                myIntent.putExtra("address", "31 Kade St, Abuja, Nigeria");
+                myIntent.putExtra("postal_code", "110001");
+                myIntent.putExtra("state", "Abuja");
+                myIntent.putExtra("country", "NG");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -56,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("amount", 1000);
                 myIntent.putExtra("amount_currency", "NGN");
                 myIntent.putExtra("payment_type", "checkout");
+                myIntent.putExtra("address", "31 Kade St, Abuja, Nigeria");
+                myIntent.putExtra("postal_code", "110001");
+                myIntent.putExtra("state", "Abuja");
+                myIntent.putExtra("country", "NG");
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
