@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtn = (Button) findViewById(R.id.payBtn);
         payBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnRemember = (Button) findViewById(R.id.payBtnRemember);
         payBtnRemember.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnUserData = (Button) findViewById(R.id.payBtnUserData);
         payBtnUserData.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnFail = (Button) findViewById(R.id.payBtnFail);
         payBtnFail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
                 MainActivity.this.startActivityForResult(myIntent, SIMPLEPAY_GATEWAY);
             }
         });
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         final Button payBtnCustomImage = (Button) findViewById(R.id.payBtnCustomImage);
         payBtnCustomImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.Gateway.class);
+                Intent myIntent = new Intent(MainActivity.this, ng.simplepay.gateway.checkout.Checkout.class);
                 myIntent.putExtra("api_key", "test_pu_demo");
                 myIntent.putExtra("description", "Order #123-45678 and a very long description");
                 myIntent.putExtra("amount", 1000);
